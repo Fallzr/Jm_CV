@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for, flash
 
-views = Blueprint(__name__, "views")
+views = Blueprint(__name__, "views", template_folder='templates')  # Specify the templates folder for this blueprint
 
 # Simulated user data for demonstration
 users = {
@@ -9,11 +9,11 @@ users = {
 
 @views.route("/")
 def home():
-    return render_template("index.html", name="Jm")
+    return render_template("index.html", name="Jm")  # This will find index.html in the root directory
 
 @views.route("/profile")
 def profile():
-    return render_template("profile.html")
+    return render_template("profile.html")  # This will find profile.html in the templates directory
 
 @views.route("/data")
 def get_data():
@@ -26,11 +26,11 @@ def go_to_home():
 
 @views.route("/login", methods=["POST"])
 def login():
-    email = request.form.get("email")
+    username = request.form.get("username")  # Use 'username' instead of 'email'
     password = request.form.get("password")
 
-    # Check if the email and password match
-    if email in users and users[email] == password:
+    # Check if the username and password match
+    if username in users and users[username] == password:
         return redirect(url_for("views.profile"))
     
     flash("Invalid credentials!")  # Show an error message

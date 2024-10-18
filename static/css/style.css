@@ -9,7 +9,7 @@
 html,
 body {
   height: 100%;
-  background-color: rgb(197, 193, 193);
+  background-color: #dddddd;
   
 }
 
@@ -51,7 +51,7 @@ a {
 }
 
 .profile {
-  background-color: rgb(197, 193, 193);
+  background-color: #dddddd;
   width: 40%;
   float: left;
   color: #676768;

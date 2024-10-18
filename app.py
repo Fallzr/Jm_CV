@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for
 from views import views
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')  # Keep the root folder for index.html
 app.secret_key = 'Th1s1sak3y'  # Set your secret key here
 app.register_blueprint(views, url_prefix="/login_page")
 
@@ -12,6 +12,3 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
-
-
-
