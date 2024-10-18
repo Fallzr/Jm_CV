@@ -1,0 +1,14 @@
+{
+  "name": "my-python-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass 'My Python Project - static/style.scss' 'My Python Project - static/style.css' --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.79.5"
+  }
+}
