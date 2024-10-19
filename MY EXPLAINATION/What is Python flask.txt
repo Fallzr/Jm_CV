@@ -1,0 +1,4 @@
+
+Flask is a lightweight web framework for Python that allows developers to build web applications quickly and easily. It operates as a microframework, providing only essential components while allowing for extensive customization through extensions. Flask handles URL routing, supports templating with Jinja2, and includes a built-in development server, making it ideal for creating RESTful APIs and small to medium-sized web applications. Its simplicity and flexibility make it a popular choice among developers for rapid development and prototyping.
+
+pero dkopa eexplore restful api pero I know nagagamit to sa communication through internet and its using standard web methods like GET, POST, PUT, and DELETE

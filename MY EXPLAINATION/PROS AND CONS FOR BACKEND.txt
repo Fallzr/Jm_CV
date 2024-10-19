@@ -1,0 +1,15 @@
+Pros of Using Flask ----------------------------
+
+Simplicity: Easy to set up and use, ideal for beginners.
+Flexibility: Lightweight and modular, allowing for custom configurations.
+Community: Strong support and a wealth of extensions.
+Microframework: Minimal boilerplate, letting you build quickly.
+Documentation: Comprehensive and well-structured.
+
+Cons of Using Flask ---------------------
+
+Scalability: May require more effort to scale for large applications.
+Manual Work: More decisions and manual configuration compared to full-fledged frameworks.
+Limited Features: Lacks built-in tools for larger apps (like ORM, authentication) that come standard with some frameworks.
+Asynchronous Support: Limited built-in support for asynchronous programming.
+Learning Curve for Extensions: Some extensions can be complex to integrate effectively.
