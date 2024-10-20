@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="/static/css/signup.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/signup" method="POST">
+            {{ form.hidden_tag() }}  <!-- This will render the CSRF token -->
+            
+            <h2>Register</h2>
+            <div class="input-field">
+                <input type="text" name="first_name" required id="first_name">
+                <label for="first_name">Enter your first name</label>
+            </div>
+            <div class="input-field">
+                <input type="text" name="last_name" required id="last_name">
+                <label for="last_name">Enter your last name</label>
+            </div>
+            <div class="input-field">
+                <label for="sex" id="sxx">Sex</label>
+                <div class="radio-container">
+                  <input type="radio" id="sex_male" class="radio" name="sex" value="male" />
+                  <label for="sex_male" id="sex_males">Male</label>
+                  <input type="radio" id="sex_female" class="radio" name="sex" value="female" />
+                  <label for="sex_female" id="sex_females">Female</label>
+                </div>
+              </div>
+              
+            <div class="input-field">
+                <input type="email" name="email" required id="email">
+                <label for="email">Enter your email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" required id="password">
+                <label for="password">Enter your password</label>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div class="register">
+                <p>Already have an account? <a href="{{ url_for('views.home') }}">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div id="notificationModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Error</h3>
+                    <p>{{ messages[0] }}</p>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var modal = document.getElementById("notificationModal");
+                    modal.style.display = "block";
+                });
+
+                window.onclick = function(event) {
+                    var modal = document.getElementById("notificationModal");
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

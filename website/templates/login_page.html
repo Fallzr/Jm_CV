@@ -8,15 +8,17 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="/login_page/login" method="POST"> 
+    <form action="/login_page/login" method="POST">
+      {{ form.hidden_tag() }}  <!-- This will render the CSRF token -->
+      
       <h2>Login</h2>
       <div class="input-field">
-        <input type="text" name="username" required>
-        <label>Enter your username</label> <!-- Updated label -->
+        <input type="text" name="username" required id="username">
+        <label for="username">Enter your username</label> <!-- Updated label -->
       </div>
       <div class="input-field">
-        <input type="password" name="password" required>
-        <label>Enter your password</label>
+        <input type="password" name="password" required id="password">
+        <label for="password">Enter your password</label>
       </div>
       <div class="forget">
         <label for="remember">
@@ -27,11 +29,11 @@
       </div> 
       <button type="submit">Log In</button>
       <div class="register">
-        <p>Don't have an account? <a href="#">Register</a></p>
+        <p>Don't have an account? <a href="{{ url_for('views.signup') }}">Register</a></p>
       </div>
     </form>
   </div>
-  
+
   {% with messages = get_flashed_messages() %}
     {% if messages %}
       <div id="notificationModal" class="modal">
